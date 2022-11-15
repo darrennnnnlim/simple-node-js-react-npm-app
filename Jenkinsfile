@@ -13,7 +13,7 @@ pipeline {
         }
 	stage('OWASP Dependency Check') {
 		steps {
-			dependencyCheck additionalArgument: '--format HTML --formal XML --disableYawnAudit', odcInstallation: 'NameAnythingYouWant'
+			dependencyCheck additionalArguments: '--format HTML --formal XML --disableYawnAudit', odcInstallation: 'NameAnythingYouWant'
 		}
 	}
         stage('Test') {
