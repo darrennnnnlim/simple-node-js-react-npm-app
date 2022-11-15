@@ -11,6 +11,11 @@ pipeline {
                 sh 'npm install'
             }
         }
+	stage('OWASP Dependency Check') {
+		steps {
+			dependencyCheck additionalArgument: '--format HTML --formal XML --disableYawnAudit', odcInstallation: 'NameAnythingYouWant'
+		}
+	}
         stage('Test') {
             steps {
                 sh './jenkins/scripts/test.sh'
