@@ -9,8 +9,8 @@ git branch:'master', url: 'https://github.com/OWASP/Vulnerable-Web-Application.g
 stage('Code Quality Check via SonarQube') {
 steps {
 script {
-def scannerHome = tool 'SonarAnyQube';
-withSonarQubeEnv('SonarAnyQube') {
+def scannerHome = tool 'SonarQube';
+withSonarQubeEnv('SonarQube') {
 sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=OWASP -Dsonar.sources=."
 }
 }
