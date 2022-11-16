@@ -22,7 +22,7 @@ pipeline {
 					}
 					steps {
 						sh 'mvn -B -DskipTests clean package'
-						sh 'mvn test'
+						sh 'mvn ./src/test'
 					}
 					post {
 						always {
